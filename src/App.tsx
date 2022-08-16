@@ -8,6 +8,8 @@ const Container = styled('div', {
   justifyContent: 'center',
   minHeight: '100vh',
   minWidth: '100vw',
+  alignItems: 'center',
+  backgroundColor: 'grey'
 })
 
 function App() {

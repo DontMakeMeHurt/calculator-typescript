@@ -10,6 +10,9 @@ const StyleButton = styled('button', {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#727171',
+    '&hover': {
+        backgroundColor: 'orange',
+    }
 })
 
 export enum ButtonType {
@@ -20,7 +23,7 @@ export enum ButtonType {
 type ButtonProps = {
     type?: ButtonType,
     label: string,
-    onClick: () => void,
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const onClick = () => {
@@ -35,8 +38,7 @@ export const Button: React.FC<ButtonProps> = ({ label, onClick , type = ButtonTy
         styles.backgroundColor = 'pink';
         styles.color = '#fff';
     }
-    console.log(styles.backgroundColor);
     return (
-        <StyleButton onClick={onClick}>{label}</StyleButton>
+        <StyleButton onClick={onClick} style={styles}>{label}</StyleButton>
     )
 }
